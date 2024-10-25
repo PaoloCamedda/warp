@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         val pulsante = findViewById<Button>(R.id.start)
         val pulsante2 = findViewById<Button>(R.id.toast)
-        //val pulsante3 = findViewById<Button>(R.id.toastandroid)
+        val pulsante3 = findViewById<ImageButton>(R.id.toastandroid)
 
         pulsante.setOnClickListener{
             goWeb()
@@ -30,6 +31,13 @@ class MainActivity : AppCompatActivity() {
         pulsante2.setOnClickListener{
             riseAToast()
         }
+
+        pulsante3.setOnClickListener{
+            riseAndroid()
+                pulsante3.setImageResource(R.drawable.android_button);
+        }
+
+
 
     }
 
@@ -40,9 +48,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun riseAToast(){
-        Toast.makeText(getApplicationContext(),  "Look profile ", Toast.LENGTH_LONG).show();
+        Toast.makeText(applicationContext,  "Look profile ", Toast.LENGTH_LONG).show();
     }
 
+    private fun riseAndroid(){
+        Toast.makeText(applicationContext,  "Android max ", Toast.LENGTH_LONG).show();
+    }
 
 
 }
